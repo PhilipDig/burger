@@ -1,0 +1,11 @@
+<li>
+    {{#if devoured}}
+    <p>{{id}}. {{burger_name}}</p>
+    {{else}}
+    <form action="/api/burgers/{{id}}" method="POST">
+        <p>{{id}}. {{burger_name}}
+            <button>Eat this!</button>
+        </p>
+    </form>
+    {{/if}}
+</li>

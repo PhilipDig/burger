@@ -1,0 +1,24 @@
+<h1>Burgers!</h1>
+
+<h2>Add a Burger</h2>
+<form class="create-form" method="POST" action="/api/burgers">
+
+    <div class="form-group">
+        <label for="burgerName">Burger Name:</label>
+        <input type="text" id="burgerName" name="burger_name">
+    </div>
+
+    <button type="submit">Add Burger</button>
+</form>
+
+<h2>Burgers ready to be devoured</h2>
+
+<ul>
+    {{#each burgers}} {{#unless devoured}} {{> burgers/burger-block}} {{/unless}} {{/each}}
+</ul>
+
+<h2>Burgers devoured so far</h2>
+
+<ul>
+    {{#each burgers}} {{#if devoured}} {{> burgers/burger-block}} {{/if}} {{/each}}
+</ul>
